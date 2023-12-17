@@ -6,7 +6,7 @@ try:
 except Exception:
     port = ""
 def script1():
-    os.system("python3 file1.py "+port)     
+    os.system(f"python3 file1.py {port}")     
 def script2():
     os.system("python3 file2.py") 
 

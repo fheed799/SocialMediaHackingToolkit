@@ -11,8 +11,6 @@ import smtplib
 
 codeList = ["TR", "US-C", "US", "US-W", "CA", "CA-W", "FR", "DE", "NL", "NO", "RO", "CH", "GB", "HK"]
 choiceCode = random.choice(codeList)
-option_list = []
-
 sleep_time = 4
 b = mechanize.Browser()
 b.set_handle_equiv(True)
@@ -29,7 +27,38 @@ b.addheaders = [('User-agent',
 os.system("clear")
 ascii()
 select_an_option()
-print("["+color.GREEN+"1"+color.END+"] "+color.YELLOW+"Instagram\n"+color.END+"["+color.GREEN+"2"+color.END+"] "+color.BLUE+"Facebook"+"\n"+color.END+"["+color.GREEN+"3"+color.END+"] "+color.RED+"Gmail"+color.END+"\n"+color.END+"["+color.GREEN+"4"+color.END+"] "+color.CYAN+"Twitter"+color.END)
+print(
+    f"[{color.GREEN}1{color.END}] {color.YELLOW}"
+    + "Instagram\n"
+    + color.END
+    + "["
+    + color.GREEN
+    + "2"
+    + color.END
+    + "] "
+    + color.BLUE
+    + "Facebook"
+    + "\n"
+    + color.END
+    + "["
+    + color.GREEN
+    + "3"
+    + color.END
+    + "] "
+    + color.RED
+    + "Gmail"
+    + color.END
+    + "\n"
+    + color.END
+    + "["
+    + color.GREEN
+    + "4"
+    + color.END
+    + "] "
+    + color.CYAN
+    + "Twitter"
+    + color.END
+)
 option = input("\n> ")
 if option == "1":
     option_name = "instagram"
@@ -39,10 +68,10 @@ elif option == "3":
     option_name = "gmail"
 elif option == "4":
     option_name = "twitter"
-option_list.append(option_name)
+option_list = [option_name]
 clear()
 ascii()
-print(color.GREEN+"/"+option_list[0]+ "\n")
+print(f"{color.GREEN}/{option_list[0]}" + "\n")
 select_an_option()
 
 

