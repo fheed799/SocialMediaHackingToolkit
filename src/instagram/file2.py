@@ -10,7 +10,7 @@ class bcolors:
     ENDC      = '\033[0m'
     GREY      = '\033[90m'
     BG_RED    = '\033[41m'
-square_tild = (bcolors.FAIL+"["+bcolors.ENDC+"∼"+bcolors.FAIL+"]"+bcolors.ENDC)
+square_tild = f"{bcolors.FAIL}[{bcolors.ENDC}∼{bcolors.FAIL}]{bcolors.ENDC}"
 
 while True:
     #open file in read mode
@@ -26,10 +26,9 @@ while True:
 
 
 print(square_tild+bcolors.OKBLUE+bcolors.BOLD+''' Login Info Found !'''+bcolors.OKGREEN+'''
-''')        
+''')
 print(data)
 print(bcolors.ENDC)
 time.sleep(4)
-f = open("info.txt", "w")
-f.write("")
-f.close()
+with open("info.txt", "w") as f:
+    f.write("")
